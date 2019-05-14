@@ -1,0 +1,3 @@
+rootProject.name = 'mhw-armor7-parent'
+include 'core'
+
