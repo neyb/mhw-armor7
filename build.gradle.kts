@@ -18,7 +18,7 @@ buildscript {
 }
 
 subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply("org.jetbrains.kotlin.jvm")
 
     repositories {
         mavenCentral()
@@ -30,6 +30,7 @@ subprojects {
 
     dependencies {
         "implementation"(kotlin("stdlib-jdk8"))
+
         "testImplementation"("org.junit.jupiter:junit-jupiter-api:5.4.2")
         "testRuntime"("org.junit.jupiter:junit-jupiter-engine:5.4.2")
     }

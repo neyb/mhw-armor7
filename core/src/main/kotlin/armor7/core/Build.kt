@@ -2,25 +2,28 @@ package armor7.core
 
 import sun.font.Decoration
 
-data class Set(
+data class Build(
+    val necklace: Armor? = null,
     val armorSet: ArmorSet,
-    val decorations: List<Decoration>
+    val decorations: List<Decoration> = listOf()
 ) {
-    fun withHead(head: Armor) = copy(armorSet = armorSet.copy(head = head))
 }
 
 data class Decoration(val skill: Skill, val size: Int)
 
+enum class Part {
+    head, trunk, waist, legs, feet
+}
+
 data class ArmorSet(
-    val head: Armor,
-    val body: Armor,
-    val waist: Armor,
-    val legs: Armor,
-    val feet: Armor,
-    val necklace: Armor
-)
+    val head: Armor? = null,
+    val trunk: Armor? = null,
+    val waist: Armor? = null,
+    val legs: Armor? = null,
+    val feet: Armor? = null)
 
 data class Armor(
+    val part: Part,
     val defenses: Defenses,
     val skills: List<Skill>,
     val slots: List<Slot>
